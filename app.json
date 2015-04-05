@@ -5,7 +5,10 @@
 	"env": {
 		"AUTH_USER": { "required": false },
 		"AUTH_PASSWORD": { "required": false },
-		"SEARCH_PROVIDERS_URL": { "required": false },
+		"SEARCH_PROVIDERS_URL": {
+			"value": "https://gist.githubusercontent.com/jpillora/e667f3d16a6bd403edc4/raw/af4ff4a66a1599ccfd6940d90c633a39ecbf6ba1/torrent-cloud-search-provider-example.json",
+			"required": false
+		},
 		"AWS_BUCKET": { "required": false },
 		"AWS_REGION": { "required": false },
 		"AWS_ACCESS_KEY": { "required": false },

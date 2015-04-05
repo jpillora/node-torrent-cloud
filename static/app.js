@@ -170,6 +170,10 @@ app.controller("OmniController", function($scope, $rootScope, storage) {
 		if (!m.tr)
 			return;
 
+		//force array
+		if (!(m.tr instanceof Array))
+			m.tr = [m.tr];
+
 		//in place map
 		for (var i = 0; i < m.tr.length; i++)
 			$scope.trackers[i] = {
@@ -207,6 +211,8 @@ app.controller("OmniController", function($scope, $rootScope, storage) {
 			parseMagnet(RegExp.$1);
 		else if ($scope.omni)
 			parseSearch();
+		else
+			$scope.edit = false;
 	};
 	$scope.parse();
 
@@ -313,16 +319,6 @@ app.run(function($rootScope, request) {
 		request("torrents/" + method, input);
 	};
 
-	$scope.zipAll = function(t) {
-		$scope.torrentsAPI('zipAll', {
-			hash: t.hash
-		});
-		// for (var i = 0; i < t.files.length; i++) {
-		// 	var f = t.files[i];
-		// 	if (!f.downloading && !$scope.uploads[f.path])
-		// }
-	};
-
 	$scope.uploaded = function(f) {
 		var path = typeof f === "object" ? f.path : f;
 		return $scope.data.uploads && $scope.data.uploads[path];
@@ -338,7 +334,6 @@ app.run(function($rootScope, request) {
 	};
 
 	var ws;
-	var wsPort = 443;
 	//websocket keep alive
 	setInterval(function() {
 		if (ws && ws.readyState === window.WebSocket.OPEN)
@@ -346,10 +341,12 @@ app.run(function($rootScope, request) {
 	}, 30 * 1000);
 	//websocket auto reconnect
 	(function reconnect() {
-		var url = window.location.origin.replace("http", "ws");
-		if(!/:\d+$/.test(url))
-			url += ":" + wsPort
 
+		//reset backoff timer
+		if(!reconnect.t) 
+			reconnect.t = 100;
+
+		var url = window.location.origin.replace("http", "ws");
 		ws = new window.WebSocket(url);
 		ws.onmessage = function(e) {
 			if (e.data === "ping") return;
@@ -358,21 +355,22 @@ app.run(function($rootScope, request) {
 			$scope.$apply();
 		};
 		ws.onerror = function(err) {
-			console.error("WS Error: ", err);
-			wsPort = wsPort === 443 ? 8443 : 443;
+			//noop
 		};
 		ws.onopen = function() {
 			console.log("connected");
 			$scope.$apply(function() {
 				$scope.connected = true;
 			});
+			reconnect.t = 100;
 		};
 		ws.onclose = function() {
-			console.log("disconnected");
 			$scope.$apply(function() {
 				$scope.connected = false;
 			});
-			setTimeout(reconnect, 2000);
+			reconnect.t *= 2;
+			setTimeout(reconnect, reconnect.t);
+			console.log("disconnected, reconnecting in %sms",reconnect.t);
 		};
 	})();
 });

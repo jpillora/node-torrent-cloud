@@ -75,7 +75,7 @@ Torrent Cloud provides an easy way to screen-scrape any of the [copyright-free (
 
 **Backend** A Node.js app using Express, WebSockets, and many other modules. The server entry point is `server.js` and the modules are inside `lib/`, they're documented in the comments though questions are welcome via Issues. Currently there are only Mega and AWS storage backends, though contributions are wanted. To get started, take a look at [`lib/backends/_template.js`](https://github.com/jpillora/torrent-cloud/blob/master/lib/backends/_template.js) for the required interface.
 
-**Frontend** An Angular app with related all files in `static/`.
+**Frontend** An Angular app with related all files in `static/`. The HTTP API is for performing actions, it will return an error or an empty OK. The entire state is sent, on change, via WebSockets. So, you start a torrent with HTTP, then updates are streamed down with WebSockets.
 
 ## Help!
 
