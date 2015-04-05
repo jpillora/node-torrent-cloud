@@ -1,6 +1,6 @@
 {
   "name": "torrent-cloud",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A torrent client in the cloud",
   "main": "server.js",
   "author": "Jaime Pillora <dev@jpillora.com>",

@@ -15,7 +15,7 @@ There are a various existing cloud torrent services (bitport.io, btcloud.io, put
 * Embedded torrent search
 * Load torrents via magnet URI or torrent file URL
 * Magnet URI editor
-* Responsive (Mobile friendly)
+* Responsive WebUI (Mobile friendly)
 * Download all as streaming ZIP file
 * Uses high-bandwidth upload download of cloud providers
 
@@ -75,7 +75,7 @@ Torrent Cloud provides an easy way to screen-scrape any of the [copyright-free (
 
 **Backend** A Node.js app using Express, WebSockets, and many other modules. The server entry point is `server.js` and the modules are inside `lib/`, they're documented in the comments though questions are welcome via Issues. Currently there are only Mega and AWS storage backends, though contributions are wanted. To get started, take a look at [`lib/backends/_template.js`](https://github.com/jpillora/torrent-cloud/blob/master/lib/backends/_template.js) for the required interface.
 
-**Frontend** An Angular app with related all files in `static/`. The HTTP API is for performing actions, it will return an error or an empty OK. The entire state is sent, on change, via WebSockets. So, you start a torrent with HTTP, then updates are streamed down with WebSockets.
+**Frontend** An Angular app with related all files in `static/`. The HTTP API is for initiating all actions (e.g. start/stop torrent), and will return an error or an empty OK. The entire app state is sent, on change, via WebSockets.
 
 ## Help!
 
@@ -85,6 +85,8 @@ Torrent Cloud provides an easy way to screen-scrape any of the [copyright-free (
 * A. There is a 50MB buffer, so once the download goes 50MB past the upload, it will stop and wait for the upload to catch up.
 * Q. Why is the Mega backend is buggy?
 * A. It uses an old library and it hasn't been tested as much as the AWS backend.
+* Q. Heroku dynos turn Idle after 30 minutes of no requests?
+* A. Use https://uptimerobot.com/ to ping it, you also get the added benefit of tracking its uptime
 
 Ask questions on the Issues page.
 
