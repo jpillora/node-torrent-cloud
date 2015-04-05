@@ -1,0 +1,13 @@
+{
+	"name": "torrent-cloud",
+	"website": "https://github.com/jpillora/torrent-cloud",
+	"repository": "https://github.com/jpillora/torrent-cloud",
+	"env": {
+		"AWS_BUCKET": { "required": false },
+		"AWS_REGION": { "required": false },
+		"AWS_ACCESS_KEY": { "required": false },
+		"AWS_SECRET_KEY": { "required": false },
+		"MEGA_EMAIL": { "required": false },
+		"MEGA_PASS": { "required": false }
+	}
+}

@@ -1,0 +1,32 @@
+{
+  "name": "torrent-cloud",
+  "version": "0.1.0",
+  "description": "A torrent client in the cloud",
+  "main": "server.js",
+  "author": "Jaime Pillora <dev@jpillora.com>",
+  "bin": {
+    "torrent-cloud": "bin.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "^0.9.0",
+    "aws-sdk": "^2.1.7",
+    "basic-auth-connect": "^1.0.0",
+    "body-parser": "^1.10.1",
+    "cheerio": "^0.18.0",
+    "express": "^4.11.0",
+    "http-proxy": "^1.8.1",
+    "mega": "^0.2.0",
+    "mime": "^1.2.11",
+    "mkdirp": "^0.5.0",
+    "parse-torrent": "^4.0.0",
+    "request": "^2.51.0",
+    "rimraf": "^2.2.8",
+    "torrent-stream": "^0.16.2",
+    "ws": "^0.6.5",
+    "zip-stream": "^0.5.0"
+  },
+  "engines": {
+    "node": ">=0.10.x"
+  }
+}
