@@ -23,11 +23,6 @@ There are a various existing cloud torrent services (bitport.io, btcloud.io, put
 
 1. Setup your cloud storage (*Choose one*)
 
-	* Mega
-		1. Sign up for a free [Mega](https://mega.co.nz) account
-		1. Set `MEGA_EMAIL` to your username (email address) (**Required**)
-		1. Set `MEGA_PASS` to your password (**Required**)
-
 	* AWS
 		1. Sign up for a free for 1 year [Amazon Web Services](https://aws.amazon.com) account
 		1. Go to the [AWS Console](https://console.aws.amazon.com/)
@@ -37,6 +32,11 @@ There are a various existing cloud torrent services (bitport.io, btcloud.io, put
 		1. Set `AWS_SECRET_KEY` AWS Secret key (**Required**)
 		1. Set `AWS_BUCKET` The S3 bucket name (**Required**)
 		1. Set `AWS_REGION` The S3 bucket region code (**Required** see [region codes](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions))
+
+	* Mega **Warning: the Mega backend is quite buggy**
+		1. Sign up for a free [Mega](https://mega.co.nz) account
+		1. Set `MEGA_EMAIL` to your username (email address) (**Required**)
+		1. Set `MEGA_PASS` to your password (**Required**)
 
 	*Note: See the [contribute](#Contributing) section for adding more storage backends*
 
@@ -61,7 +61,7 @@ There are a various existing cloud torrent services (bitport.io, btcloud.io, put
 
 		1. Install Node
 		1. `$ npm i -g torrent-cloud`
-		1. `(PORT=8080 && torrent-cloud)`
+		1. `env PORT=8080 torrent-cloud`
 
 1. And that's it! (On Heroku, visit `https://<appname>.herokuapp.com`)
 
@@ -79,7 +79,12 @@ Torrent Cloud provides an easy way to screen-scrape any of the [copyright-free (
 
 ## Help!
 
-If deployment succeeds but the page isn't loading. View Heroku logs with: `heroku logs --tail --<appname>` (`heroku` tool required). You're most likely missing one of storage environment variables above.
+* Q. If deployment succeeds but the page isn't loading?
+* A. View torrent-cloud's stdout. On Heroku, you can view logs with: `heroku logs --tail --<appname>` (`heroku` tool required). You're most likely missing one of storage environment variables above.
+* Q. Download speed goes up then down?
+* A. There is a 50MB buffer, so once the download goes 50MB past the upload, it will stop and wait for the upload to catch up.
+* Q. Why is the Mega backend is buggy?
+* A. It uses an old library and it hasn't been tested as much as the AWS backend.
 
 Ask questions on the Issues page.
 
@@ -107,6 +112,7 @@ Ask questions on the Issues page.
 * Use backend storage to keep app state between restarts
 * Improve UI
 	* Make use of screen real estate with mobile in mind
+	* Drop-in torrent files
 	* Improved file management
 		* Save as
 		* Rename
