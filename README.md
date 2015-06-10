@@ -1,3 +1,9 @@
+
+:warning: I'm currently writing [version 2](https://github.com/jpillora/cloud-torrent) in [Go](http://golang.org) and won't be adding anymore features to this version. If you'd like to be the maintainer or contributer of this version, please leave a comment [here](https://github.com/jpillora/node-torrent-cloud/issues/1).
+
+---
+
+
 # Torrent Cloud
 
 **A torrent client in the cloud, written in [Node.js](http://nodejs.org)**
@@ -7,8 +13,6 @@ There are a various existing cloud torrent services (bitport.io, btcloud.io, put
 ![screenshot](https://cloud.githubusercontent.com/assets/633843/6997094/f0f0b934-dbf0-11e4-8766-56b0756f3250.png)
 
 **Disclaimer** This project was created to bring about an addition download channel to defeat unfair BitTorrent protocol restrictions imposed by enterprises and ISPs. It was intended for downloading legal, non-copywrite material, such as: public linux distributions, personal files, large public statistical datasets, public domain images and videos from archive.org, etc. This project will not take any responsibility for any illegal use, by using this software you agree to these terms.
-
-**Support** I'll be porting this project to [Go](http://golang.org) and won't be adding anything new to this Node version. If you'd like to be a contributor, please leave a comment [here](https://github.com/jpillora/node-torrent-cloud/issues/1).
 
 ## Features
 
