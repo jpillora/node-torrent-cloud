@@ -25,32 +25,34 @@ There are a various existing cloud torrent services (bitport.io, btcloud.io, put
 
 ### Installation
 
-1. Setup your cloud storage (*Choose one*)
+1. Collect the environment variables
 
-	* AWS
-		1. Sign up for a free for 1 year [Amazon Web Services](https://aws.amazon.com) account
-		1. Go to the [AWS Console](https://console.aws.amazon.com/)
-		1. Retrieve your API keys (*Top-right menu `[Your Name] > Security Credentials`*)
-		1. Create an S3 bucket in the region closest to you
-		1. Set `AWS_ACCESS_KEY` AWS Access key (**Required**)
-		1. Set `AWS_SECRET_KEY` AWS Secret key (**Required**)
-		1. Set `AWS_BUCKET` The S3 bucket name (**Required**)
-		1. Set `AWS_REGION` The S3 bucket region code (**Required** see [region codes](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions))
-
-	* Mega **Warning: the Mega backend is quite buggy**
-		1. Sign up for a free [Mega](https://mega.co.nz) account
-		1. Set `MEGA_EMAIL` to your username (email address) (**Required**)
-		1. Set `MEGA_PASS` to your password (**Required**)
-
-	*Note: See the [contribute](#Contributing) section for adding more storage backends*
-
-1. Consider these environment variables
-
-	1. `HOST` Listening interface (**Optional** defaults to all `0.0.0.0`)
-	1. `PORT` Listening port (**Optional** default `3000`)
-	1. `AUTH_USER` HTTP Basic Auth (**Optional** default `admin`)
-	1. `AUTH_PASSWORD` HTTP Basic Auth (**Optional** if set HTTP auth will be enabled)
-	1. `SEARCH_PROVIDERS_URL` URL to a JSON configuration file (**Optional** see below)
+	1. Setup your cloud storage (*Choose one*)
+	
+		* AWS
+			1. Sign up for a free for 1 year [Amazon Web Services](https://aws.amazon.com) account
+			1. Go to the [AWS Console](https://console.aws.amazon.com/)
+			1. Retrieve your API keys (*Top-right menu `[Your Name] > Security Credentials`*)
+			1. Create an S3 bucket in the region closest to you
+			1. You'll need your AWS Access key (`AWS_ACCESS_KEY` **Required**)
+			1. You'll need your AWS Secret key (`AWS_SECRET_KEY` **Required**)
+			1. You'll need the S3 bucket name (`AWS_BUCKET` **Required**)
+			1. You'll need the S3 bucket region code (`AWS_REGION` **Required** see [region codes](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions))
+	
+		* Mega **Warning: the Mega backend is quite buggy**
+			1. Sign up for a free [Mega](https://mega.co.nz) account
+			1. You'll need your username (email address) (`MEGA_EMAIL` **Required**)
+			1. You'll need your password (`MEGA_PASS`**Required**)
+	
+		*Note: See the [contribute](#Contributing) section for adding more storage backends*
+	
+	1. Consider these optional variables
+	
+		1. `HOST` Listening interface (**Optional** defaults to all `0.0.0.0`)
+		1. `PORT` Listening port (**Optional** default `3000`)
+		1. `AUTH_USER` HTTP Basic Auth (**Optional** default `admin`)
+		1. `AUTH_PASSWORD` HTTP Basic Auth (**Optional** if set HTTP auth will be enabled)
+		1. `SEARCH_PROVIDERS_URL` URL to a JSON configuration file (**Optional** see below)
 
 1. Setup your cloud hosting environment
 
