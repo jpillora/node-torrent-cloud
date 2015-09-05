@@ -54,7 +54,7 @@ There are a various existing cloud torrent services (bitport.io, btcloud.io, put
 		1. `AUTH_PASSWORD` HTTP Basic Auth (**Optional** if set HTTP auth will be enabled)
 		1. `SEARCH_PROVIDERS_URL` URL to a JSON configuration file (**Optional** see below)
 
-1. Setup your cloud hosting environment
+1. Choose a cloud hosting environment
 
 	1. Heroku
 	
@@ -63,7 +63,7 @@ There are a various existing cloud torrent services (bitport.io, btcloud.io, put
 
 			[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-	1. Others
+	1. *Others*
 
 		1. Install Node
 		1. `$ npm i -g torrent-cloud`
