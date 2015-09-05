@@ -59,7 +59,7 @@ There are a various existing cloud torrent services (bitport.io, btcloud.io, put
 	1. Heroku
 	
 		1. Sign up for a free [Heroku](https://heroku.com) account
-		1. Deploy your own copy of this app to Heroku
+		1. **Click this Deploy button** and fill in the variables you've considered above
 
 			[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
