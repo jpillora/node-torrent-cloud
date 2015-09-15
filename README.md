@@ -1,5 +1,7 @@
 
-:warning: I'm currently writing [version 2](https://github.com/jpillora/cloud-torrent) in [Go](http://golang.org) and won't be adding anymore features to this version. If you'd like to be the maintainer or contributer of this version, please leave a comment [here](https://github.com/jpillora/node-torrent-cloud/issues/1).
+**The first release of [version 2](https://github.com/jpillora/cloud-torrent) is ready!**
+
+:warning: This version is deprecated. If you'd like to be the maintainer or contributer of this version, please leave a comment [here](https://github.com/jpillora/node-torrent-cloud/issues/1).
 
 ---
 
