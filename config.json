@@ -8,5 +8,10 @@
 	"AWS_ACCESS_KEY": null,
 	"AWS_SECRET_KEY": null,
 	"MEGA_EMAIL": null,
-	"MEGA_PASS": null
+	"MEGA_PASS": null,
+	"SSH_HOST": null,
+	"SSH_USERNAME": null,
+	"SSH_PASSWORD": null,
+	"SSH_PORT": null,
+	"SSH_ROOT": null
 }
