@@ -20,12 +20,12 @@ var http = require('http');
 var express = require('express');
 var app = express();
 var server = http.createServer(app);
-var port = parseInt(process.argv[2], 10) ||
+var port = process.env.OPENSHIFT_NODEJS_PORT ||
+			parseInt(process.argv[2], 10) ||
 			process.env.PORT ||
-			process.env.OPENSHIFT_NODEJS_PORT ||
 			3001;
-var host = process.env.HOST ||
-			process.env.OPENSHIFT_NODEJS_IP ||
+var host = 	process.env.OPENSHIFT_NODEJS_IP ||
+			process.env.HOST ||
 			"0.0.0.0";
 
 //global auth
