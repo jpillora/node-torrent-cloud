@@ -24,7 +24,7 @@
     "rimraf": "^2.2.8",
     "ssh2-sftp-client": "^1.0.5",
     "torrent-stream": "^0.16.2",
-    "ws": "^0.6.5",
+    "ws": "^7.2.0",
     "zip-stream": "^0.5.0"
   },
   "engines": {
